@@ -911,9 +911,10 @@ export default {
   head: {
     title: 'SEBA | Educational Plarform',
     meta: [
-      { property: 'og:title', content: 'Seba' },
+      { property: 'og:title', content: 'Seba', hid: 'og:title' },
       {
         property: 'og:description',
+        hid: 'og:site_name',
         content: 'Online Education Platform',
         name: 'og:description',
       },
@@ -923,6 +924,7 @@ export default {
       },
       {
         property: 'og:site_name',
+        hid: 'og:site_name',
         name: 'og:site_name',
         content: 'Seba',
       },

@@ -18,9 +18,10 @@ export default {
   head: {
     title: 'COC Developments',
     meta: [
-      { property: 'og:title', content: 'COC, inc' },
+      { property: 'og:title', hid: 'og:title', content: 'COC, inc' },
       {
         property: 'og:description',
+        hid: 'og:description',
         content: 'COC Developments for software solutions.',
       },
       {
@@ -28,6 +29,7 @@ export default {
         content: 'https://cocdevs.com/imgs/COC-trans.png',
       },
       {
+        hid: 'og:site_name',
         property: 'og:site_name',
         name: 'og:site_name',
         content: 'COC Developments',
