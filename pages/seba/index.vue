@@ -921,7 +921,11 @@ export default {
         property: 'og:image',
         content: 'https://cocdevs.com/imgs/COC-trans.png',
       },
-      { property: 'og:site_name', content: 'Seba' },
+      {
+        property: 'og:site_name',
+        name: 'og:site_name',
+        content: 'Seba',
+      },
     ],
   },
 }
