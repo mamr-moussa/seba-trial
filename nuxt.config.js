@@ -45,6 +45,11 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
+  server: {
+    port: 4050, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
+
   // Content module configuration (https://go.nuxtjs.dev/content-config)
   content: {},
 
