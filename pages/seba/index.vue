@@ -913,7 +913,10 @@ export default {
     meta: [
       { property: 'og:title', content: 'Seba' },
       { property: 'og:description', content: 'Online Education Platform' },
-      { property: 'og:img', content: 'https://cocdevs.com/imgs/COC-trans.png' },
+      {
+        property: 'og:image',
+        content: 'https://cocdevs.com/imgs/COC-trans.png',
+      },
     ],
   },
 }

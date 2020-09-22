@@ -23,7 +23,10 @@ export default {
         property: 'og:description',
         content: 'COC Developments for software solutions.',
       },
-      { property: 'og:img', content: 'https://cocdevs.com/imgs/COC-trans.png' },
+      {
+        property: 'og:image',
+        content: 'https://cocdevs.com/imgs/COC-trans.png',
+      },
     ],
   },
 }
