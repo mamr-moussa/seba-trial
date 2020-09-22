@@ -908,6 +908,9 @@ export default {
         this.$vuetify.goTo('#about-me')
     },
   },
+  head: {
+    title: 'SEBA | Educational Plarform',
+  },
 }
 </script>
 <style lang="css">

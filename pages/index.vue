@@ -15,6 +15,9 @@
 <script>
 export default {
   layout: 'seba',
+  head: {
+    title: 'COC Developments',
+  },
 }
 </script>
 <style lang="css">
