@@ -21,7 +21,7 @@
             autoplay
             controls
             style="width: 100vw; background-color: #000"
-            @ended="$vuetify.goTo('#about-me')"
+            @ended="handleVideoEnding"
           >
             <source src="/videos/intro.mp4?autoplay=1" />
           </video>
@@ -167,9 +167,9 @@
                   <ul class="text-right">
                     <li
                       v-for="(point, p) in text"
-                      v-text="point"
                       :key="p"
                       class="mb-3"
+                      v-text="point"
                     />
                   </ul>
                 </v-card-text>
@@ -478,6 +478,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/mongodb.png" />
+              <p class="hidden-md-and-up text-center">Mongo</p>
             </v-col>
             <v-col
               cols="6"
@@ -488,6 +489,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/cassandra.png" />
+              <p class="hidden-md-and-up text-center">Cassandra</p>
             </v-col>
             <v-col
               cols="6"
@@ -498,6 +500,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/mysql.png" />
+              <p class="hidden-md-and-up text-center">MySQL</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
@@ -540,6 +543,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/node.png" />
+              <p class="hidden-md-and-up text-center">NodeJS</p>
             </v-col>
             <v-col
               cols="6"
@@ -550,6 +554,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/go.png" />
+              <p class="hidden-md-and-up text-center">GoLang</p>
             </v-col>
             <v-col
               cols="6"
@@ -560,6 +565,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/cpp.png" />
+              <p class="hidden-md-and-up text-center" dir="ltr">C++</p>
             </v-col>
             <v-col
               cols="6"
@@ -570,6 +576,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/elixir.png" />
+              <p class="hidden-md-and-up text-center">Elixir</p>
             </v-col>
             <v-col
               cols="6"
@@ -580,6 +587,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/python.png" />
+              <p class="hidden-md-and-up text-center">Python</p>
             </v-col>
             <v-col
               cols="6"
@@ -590,6 +598,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/php.png" />
+              <p class="hidden-md-and-up text-center">PHP</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
@@ -666,6 +675,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/vue.png" />
+              <p class="hidden-md-and-up text-center">VUE PWA</p>
             </v-col>
             <v-col
               cols="6"
@@ -676,6 +686,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/nuxt.png" />
+              <p class="hidden-md-and-up text-center">Nuxt SSR</p>
             </v-col>
             <v-col
               cols="6"
@@ -686,6 +697,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/swift.png" />
+              <p class="hidden-md-and-up text-center">Swift</p>
             </v-col>
             <v-col
               cols="6"
@@ -696,6 +708,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/kotlin.png" />
+              <p class="hidden-md-and-up text-center">Kotlin</p>
             </v-col>
             <v-col
               cols="6"
@@ -706,6 +719,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/flutter.png" />
+              <p class="hidden-md-and-up text-center">Flutter</p>
             </v-col>
             <v-col
               cols="6"
@@ -716,6 +730,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/webrtc.png" />
+              <p class="hidden-md-and-up text-center">WebRTC</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
@@ -759,7 +774,6 @@
           </p>
 
           <h1 class="dis-2 text-center">Deployment and Automation</h1>
-          <p>lorem ipsum</p>
           <v-row justify="center" align="center">
             <v-col
               cols="6"
@@ -770,6 +784,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/jenkins.png" />
+              <p class="hidden-md-and-up text-center">Jenkins CI/CL</p>
             </v-col>
             <v-col
               cols="6"
@@ -780,6 +795,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/git.png" />
+              <p class="hidden-md-and-up text-center">Git VC</p>
             </v-col>
             <v-col
               cols="6"
@@ -790,6 +806,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/docker.png" />
+              <p class="hidden-md-and-up text-center">Docker</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
@@ -803,6 +820,12 @@
               <p class="text-center">Docker</p>
             </v-col>
           </v-row>
+          <p>
+            الية العمل و ميكنة عملية النشر تسهل من مهام المطورين و ترفع من كفائة
+            و اداء المنصه، حيث انها تضمن ان كل ما سيتم نشره يعمل بكفائة من خلال
+            ميكنة عملية الاختبار، كما انه في حالات الطوارئ او الاخطاء الغير
+            متوقعه يقوم تلقائياً بالرجوع لأخر نسخة تعمل بكفائة.
+          </p>
         </v-container>
       </section>
     </v-main>
@@ -880,15 +903,10 @@ export default {
       if (window.scrollY > this.$refs.vid.height) this.navColor = '#0b0d10'
       else this.navColor = 'transparent'
     },
-  },
-  head: {
-    links: [
-      {
-        href:
-          'https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap',
-        rel: 'stylesheet',
-      },
-    ],
+    handleVideoEnding() {
+      if (window.scrollY > this.$refs.vid.height)
+        this.$vuetify.goTo('#about-me')
+    },
   },
 }
 </script>
@@ -927,5 +945,35 @@ p {
 }
 .theme--dark.v-application {
   background: #000;
+}
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-Regular.ttf');
+  font-weight: 250;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-BoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-LightItalic.ttf');
+  font-weight: light;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo/Cairo-Light.ttf');
+  font-weight: light;
+  font-style: normal;
 }
 </style>
