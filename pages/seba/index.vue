@@ -664,7 +664,6 @@
           </p>
 
           <h1 class="dis-2 text-center">Client Portals</h1>
-          <p>lorem ipsum</p>
           <v-row justify="center" align="center">
             <v-col
               cols="6"
