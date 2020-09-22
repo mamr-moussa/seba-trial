@@ -17,6 +17,14 @@ export default {
   layout: 'seba',
   head: {
     title: 'COC Developments',
+    meta: [
+      { property: 'og:title', content: 'COC, inc' },
+      {
+        property: 'og:description',
+        content: 'COC Developments for software solutions.',
+      },
+      { property: 'og:img', content: 'https://cocdevs.com/imgs/COC-trans.png' },
+    ],
   },
 }
 </script>

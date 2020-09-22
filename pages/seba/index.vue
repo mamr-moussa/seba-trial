@@ -910,6 +910,11 @@ export default {
   },
   head: {
     title: 'SEBA | Educational Plarform',
+    meta: [
+      { property: 'og:title', content: 'Seba' },
+      { property: 'og:description', content: 'Online Education Platform' },
+      { property: 'og:img', content: 'https://cocdevs.com/imgs/COC-trans.png' },
+    ],
   },
 }
 </script>
