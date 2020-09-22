@@ -913,13 +913,13 @@ export default {
       { property: 'og:title', content: 'Seba', hid: 'og:title' },
       {
         property: 'og:description',
-        hid: 'og:site_name',
+        hid: 'og:description',
         content: 'Online Education Platform',
         name: 'og:description',
       },
       {
         property: 'og:image',
-        content: 'https://cocdevs.com/imgs/COC-trans.png',
+        content: 'https://cocdevs.com/imgs/seba.jpg',
       },
       {
         property: 'og:site_name',
