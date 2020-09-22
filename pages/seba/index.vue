@@ -912,11 +912,16 @@ export default {
     title: 'SEBA | Educational Plarform',
     meta: [
       { property: 'og:title', content: 'Seba' },
-      { property: 'og:description', content: 'Online Education Platform' },
+      {
+        property: 'og:description',
+        content: 'Online Education Platform',
+        name: 'og:description',
+      },
       {
         property: 'og:image',
         content: 'https://cocdevs.com/imgs/COC-trans.png',
       },
+      { property: 'og:site_name', content: 'Seba' },
     ],
   },
 }
