@@ -9,14 +9,17 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/imgs/COC-trans.png' },
+      { rel: 'stylesheet', href: '/css/video-player-custom.css' },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['video.js/dist/video-js.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [{ src: '~plugins/nuxt-video-player-plugin.js', ssr: false }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

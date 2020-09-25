@@ -16,7 +16,7 @@
     <v-main>
       <section id="hero" style="margin-top: -100px">
         <v-row no-gutters>
-          <video
+          <!-- <video
             ref="vid"
             autoplay
             controls
@@ -24,7 +24,25 @@
             @ended="handleVideoEnding"
           >
             <source src="/videos/intro.mp4?autoplay=1" />
-          </video>
+          </video> -->
+          <div
+            ref="vid"
+            v-video-player:myVideoPlayer="playerOptions"
+            class="video-player-box vjs-fill vjs-custom-skin"
+            style="width: 100vw"
+            :playsinline="true"
+            @play="onPlayerPlay($event)"
+            @pause="onPlayerPause($event)"
+            @ended="handleVideoEnding"
+            @loadeddata="onPlayerLoadeddata($event)"
+            @waiting="onPlayerWaiting($event)"
+            @playing="onPlayerPlaying($event)"
+            @timeupdate="onPlayerTimeupdate($event)"
+            @canplay="onPlayerCanplay($event)"
+            @canplaythrough="onPlayerCanplaythrough($event)"
+            @ready="playerReadied"
+            @statechanged="playerStateChanged($event)"
+          />
         </v-row>
       </section>
 
@@ -847,6 +865,23 @@ export default {
   data() {
     return {
       navColor: 'transparent',
+      playerOptions: {
+        responsive: true,
+        autoplay: true,
+        muted: false,
+        language: 'en',
+        playbackRates: [0.7, 1.0, 1.5, 2.0],
+        sources: [
+          {
+            type: 'video/mp4',
+            // mp4
+            src: '/videos/intro-720.mp4',
+            // webm
+            // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+          },
+        ],
+        poster: '/imgs/dark.jpg',
+      },
       features: [
         {
           icon: 'mdi-flag-variant',
@@ -893,18 +928,55 @@ export default {
     this.handleScroll()
     const vm = this
     window.onscroll = (e) => {
-      if (window.scrollY > vm.$refs.vid.height) vm.navColor = '#0b0d10'
+      if (window.scrollY > (window.innerWidth * 9) / 16) vm.navColor = '#0b0d10'
       else vm.navColor = 'transparent'
     }
   },
   methods: {
     handleScroll() {
-      if (window.scrollY > this.$refs.vid.height) this.navColor = '#0b0d10'
+      if (window.scrollY > (window.innerWidth * 9) / 16)
+        this.navColor = '#0b0d10'
       else this.navColor = 'transparent'
     },
     handleVideoEnding() {
-      if (window.scrollY > this.$refs.vid.height)
+      if (window.scrollY > (window.innerWidth * 9) / 16)
         this.$vuetify.goTo('#about-me')
+    },
+    // listen event
+    onPlayerPlay(player) {
+      // console.log('player play!', player)
+    },
+    onPlayerPause(player) {
+      // console.log('player pause!', player)
+    },
+    onPlayerEnded(player) {
+      // console.log('player ended!', player)
+    },
+    onPlayerLoadeddata(player) {
+      // console.log('player Loadeddata!', player)
+    },
+    onPlayerWaiting(player) {
+      // console.log('player Waiting!', player)
+    },
+    onPlayerPlaying(player) {
+      // console.log('player Playing!', player)
+    },
+    onPlayerTimeupdate(player) {
+      // console.log('player Timeupdate!', player.currentTime())
+    },
+    onPlayerCanplay(player) {
+      // console.log('player Canplay!', player)
+    },
+    onPlayerCanplaythrough(player) {
+      // console.log('player Canplaythrough!', player)
+    },
+    // or listen state event
+    playerStateChanged(playerCurrentState) {
+      // console.log('player current update state', playerCurrentState)
+    },
+    // player is ready
+    playerReadied(player) {
+      // console.log('example 01: the player is readied', player)
     },
   },
   head: {
