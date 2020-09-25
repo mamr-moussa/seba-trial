@@ -10,7 +10,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/imgs/COC-trans.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/coc.ico' },
       { rel: 'stylesheet', href: '/css/video-player-custom.css' },
     ],
   },
