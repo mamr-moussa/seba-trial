@@ -4,16 +4,16 @@
       <h1 class="orionAmber--text font-weight-bold">Who Are We?</h1>
       <ul class="orion-list">
         <li>
-          COC, INC is a software solutions incorporation running from 2015 all
-          the way up till this moment.
+          Orion is a software solutions incorporation running from 2015 all the
+          way up till this moment.
         </li>
         <li>
           We cooperate with companies from all over the globe to find them
           cutting-edge solutions that fit their business.
         </li>
         <li>
-          COC contributes in the software community by many open-source packages
-          available for free.
+          Orion contributes in the software community by many open-source
+          packages available for free.
         </li>
       </ul>
     </v-col>
@@ -30,7 +30,7 @@
         </li>
         <li>
           We build solutions for natural human beings, you don’t have to be a
-          genius to use them we pr omise.
+          genius to use them we promise.
         </li>
       </ul>
     </v-col>
