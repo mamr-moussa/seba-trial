@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12" :md="12">
           <v-spacer />
-          <v-btn to="/" text x-large color="orionAmber">
+          <v-btn to="/" icon x-large color="orionAmber">
             <v-avatar>
               <img
                 src="/orion.ico"
@@ -18,11 +18,23 @@
               />
             </v-avatar>
           </v-btn>
-          <v-btn to="/projects" text x-large color="orionAmber">
+          <v-btn
+            to="/projects"
+            text
+            x-large
+            color="orionAmber"
+            style="padding: 7px"
+          >
             <v-icon>mdi-atom</v-icon>
             <b class="btn-label">Projects</b>
           </v-btn>
-          <v-btn to="/about" text x-large color="orionTeal">
+          <v-btn
+            to="/about"
+            text
+            x-large
+            color="orionTeal"
+            style="padding: 7px"
+          >
             <v-icon>mdi-information-outline</v-icon>
             <b class="btn-label">About Us</b>
           </v-btn>
