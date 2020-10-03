@@ -1,24 +1,25 @@
 <template>
-  <v-app>
-    <v-container>
-      <v-row justify="center" align="center" class="container-row">
-        <v-card style="background-color: transparent; box-shadow: none">
-          <v-img src="/imgs/COC-trans.png" :height="300" :width="300" />
-          <p class="mt-5 pink--text coc-brand-name">COC Developments</p>
-          <v-btn to="/seba"> Checkout Our New Product </v-btn>
-        </v-card>
-      </v-row>
-    </v-container>
-  </v-app>
+  <v-row justify="center" align="center" class="container-row">
+    <v-card style="background-color: transparent; box-shadow: none">
+      <v-img
+        src="/imgs/orion.png"
+        :height="300"
+        :width="300"
+        class="animated rotateIn delay"
+      />
+      <p class="mt-5 coc-brand-name">ORION</p>
+      <p class="orion-tagline">Software Solutions</p>
+    </v-card>
+  </v-row>
 </template>
 
 <script>
 export default {
-  layout: 'seba',
+  layout: 'orion',
   head: {
-    title: 'COC Developments',
+    title: 'Home',
     meta: [
-      { property: 'og:title', hid: 'og:title', content: 'COC, inc' },
+      { property: 'og:title', hid: 'og:title', content: 'Orion' },
       {
         property: 'og:description',
         hid: 'og:description',
@@ -43,7 +44,22 @@ export default {
   height: 100vh;
 }
 .coc-brand-name {
-  font-family: monospace;
-  font-size: 30px;
+  text-align: center;
+  font-size: 60px;
+}
+.orion-tagline {
+  text-align: center;
+  font-size: 24px;
+  margin-top: -30px;
+  font-weight: bold;
+}
+.btn-label {
+  margin-left: 4px;
+  font-size: 130%;
+  font-weight: bold;
+  text-transform: initial;
+}
+.delay {
+  animation-delay: 1s;
 }
 </style>

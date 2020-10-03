@@ -925,6 +925,7 @@ export default {
     }
   },
   mounted() {
+    this.$vuetify.rtl = true
     this.handleScroll()
     const vm = this
     window.onscroll = (e) => {
@@ -981,6 +982,7 @@ export default {
   },
   head: {
     title: 'SEBA | Educational Plarform',
+    link: [{ rel: 'stylesheet', href: '/css/video-player-custom.css' }],
     meta: [
       { property: 'og:title', content: 'Seba', hid: 'og:title' },
       {

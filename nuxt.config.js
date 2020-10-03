@@ -3,15 +3,15 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - COC  ',
-    title: 'COC Developments',
+    titleTemplate: '%s - ORION  ',
+    title: 'Orion Developments',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/coc.ico' },
-      { rel: 'stylesheet', href: '/css/video-player-custom.css' },
+      { rel: 'icon', type: 'image/x-icon', href: '/orion.ico' },
+      { rel: 'stylesheet', href: '/css/animate.css' },
     ],
   },
 
@@ -57,7 +57,6 @@ export default {
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
-    rtl: true,
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: true,
@@ -69,6 +68,9 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
+          background: '#162238',
+          orionTeal: '#30E9B6',
+          orionAmber: '#FC9C8F',
         },
       },
     },
