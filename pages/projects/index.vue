@@ -7,7 +7,12 @@
         style="padding: 7px"
         @click="$router.push(`/projects/${project.url}`)"
       >
-        <v-img :src="project.image" aspect-ratio="1.7" contain />
+        <v-img
+          :src="project.image"
+          aspect-ratio="1.7"
+          contain
+          class="animated fadeIn"
+        />
 
         <v-card-title>
           <nuxt-link :to="`projects/${project.url}`" class="project-name">
