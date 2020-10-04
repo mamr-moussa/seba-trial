@@ -32,6 +32,11 @@
 export default {
   name: 'ProjectsIndex',
   layout: 'orion',
+  computed: {
+    projects() {
+      return this.$store.state.projects
+    },
+  },
   head: {
     title: 'Projects',
     meta: [
@@ -52,11 +57,6 @@ export default {
         content: 'Orion Developments',
       },
     ],
-  },
-  computed: {
-    projects() {
-      return this.$store.state.projects
-    },
   },
 }
 </script>

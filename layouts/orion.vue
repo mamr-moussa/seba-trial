@@ -1,6 +1,6 @@
 <template>
   <v-app :style="{ backgroundColor: '#162238' }">
-    <v-container>
+    <v-container style="min-height: 90vh">
       <v-row>
         <v-col cols="12" :md="12">
           <v-spacer />
@@ -47,8 +47,7 @@
         <v-divider />
       </div>
       <div class="grey--text text--lighten-1 text-center">
-        All material Copyrigh &copy; {{ new Date().getFullYear() }}
-        <b>ORION</b>
+        {{ new Date().getFullYear() }}&copy; <b>ORION</b> All Rights Reserved
       </div>
     </v-footer>
   </v-app>

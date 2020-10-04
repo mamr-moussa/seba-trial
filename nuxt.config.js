@@ -19,6 +19,11 @@ export default {
     ],
   },
 
+  loading: {
+    color: '#FC9C8F',
+    height: '4px',
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['video.js/dist/video-js.css'],
 

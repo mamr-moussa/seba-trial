@@ -2,7 +2,7 @@ export const state = () => ({
   projects: [
     {
       name: 'OGUN',
-      url: 'OGUN',
+      url: 'ogun',
       image: '/imgs/projects/ogun-white.png',
       discreption: 'Manufacturing ERP System',
     },

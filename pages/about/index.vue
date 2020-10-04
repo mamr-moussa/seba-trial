@@ -34,15 +34,49 @@
         </li>
       </ul>
     </v-col>
+    <v-col cols="12">
+      <h1 class="orionAmber--text font-weight-bold">Our Astronuts</h1>
+      <v-btn text color="orionTeal" to="/amr-moussa" large class="astronut-btn">
+        <v-avatar
+          class="orionAmber--text avatar-cicle animate__animted animate__rotateIn delay"
+          size="90"
+        >
+          <img src="/imgs/amr-moussa.jpg" />
+        </v-avatar>
+        <b class="ml-2">Amr Moussa</b>
+        <b class="orionAmber--text">[CEO & Founder]</b>
+      </v-btn>
+    </v-col>
   </v-row>
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  name: 'AboutIndex',
   layout: 'orion',
   data() {
     return {}
+  },
+  head: {
+    title: 'About Us',
+    meta: [
+      { property: 'og:title', hid: 'og:title', content: 'About Orion' },
+      {
+        property: 'og:description',
+        hid: 'og:description',
+        content: 'Orion Developments for software solutions.',
+      },
+      {
+        property: 'og:image',
+        content: 'https://orionstelars.com/imgs/orion.png',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        name: 'og:site_name',
+        content: 'Orion Developments',
+      },
+    ],
   },
 }
 </script>
@@ -50,5 +84,18 @@ export default {
 .orion-list {
   font-weight: bold;
   font-size: 120%;
+}
+.avatar-cicle {
+  border-width: 2px;
+  border-style: solid;
+  margin-left: -20px;
+}
+.astronut-btn {
+  height: auto !imporant;
+  max-height: unset !imporant;
+  margin-top: 20px;
+}
+.delay {
+  animation-delay: 1s;
 }
 </style>

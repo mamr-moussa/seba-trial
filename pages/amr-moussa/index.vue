@@ -21,7 +21,7 @@
                 Phone
               </v-list-item-title>
               <v-list-item-subtitle class="contact-list-text">
-                +2 01 111 33 122
+                +20 10 111 33 122
               </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
@@ -85,6 +85,27 @@
 export default {
   name: 'AmrMoussa',
   layout: 'orion',
+  head: {
+    title: 'Amr Moussa',
+    meta: [
+      { property: 'og:title', hid: 'og:title', content: 'Amr Moussa' },
+      {
+        property: 'og:description',
+        hid: 'og:description',
+        content: 'CEO and Founder of ORION.',
+      },
+      {
+        property: 'og:image',
+        content: 'https://orionstelars.com/imgs/amr-moussa.jpg',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        name: 'og:site_name',
+        content: 'Orion Developments',
+      },
+    ],
+  },
 }
 </script>
 <style scoped>
