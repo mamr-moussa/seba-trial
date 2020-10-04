@@ -23,17 +23,17 @@ export default {
       {
         property: 'og:description',
         hid: 'og:description',
-        content: 'COC Developments for software solutions.',
+        content: 'Orion Developments for software solutions.',
       },
       {
         property: 'og:image',
-        content: 'https://cocdevs.com/imgs/COC-trans.png',
+        content: 'https://orionstelars.com/imgs/orion.png',
       },
       {
         hid: 'og:site_name',
         property: 'og:site_name',
         name: 'og:site_name',
-        content: 'COC Developments',
+        content: 'Orion Developments',
       },
     ],
   },

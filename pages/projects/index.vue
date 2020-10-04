@@ -32,6 +32,27 @@
 export default {
   name: 'ProjectsIndex',
   layout: 'orion',
+  head: {
+    title: 'Projects',
+    meta: [
+      { property: 'og:title', hid: 'og:title', content: 'Orion Projects' },
+      {
+        property: 'og:description',
+        hid: 'og:description',
+        content: 'Orion Developments for software solutions.',
+      },
+      {
+        property: 'og:image',
+        content: 'https://orionstelars.com/imgs/orion.png',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        name: 'og:site_name',
+        content: 'Orion Developments',
+      },
+    ],
+  },
   computed: {
     projects() {
       return this.$store.state.projects
