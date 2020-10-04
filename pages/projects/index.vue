@@ -2,7 +2,7 @@
   <v-row>
     <v-col v-for="(project, p) in projects" :key="p" cols="12" :md="4" :lg="3">
       <v-card
-        min-height="300px"
+        min-height="320px"
         class="background lighten-1"
         style="padding: 7px"
         @click="$router.push(`/projects/${project.url}`)"

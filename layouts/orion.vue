@@ -9,9 +9,9 @@
               <img
                 src="/orion.ico"
                 :class="[
-                  'animated',
-                  { rotateIn: onHover },
-                  { jello: !onHover },
+                  'animate__animated',
+                  { animate__rotateIn: onHover },
+                  { animate__jello: !onHover },
                 ]"
                 @mouseover="onHover = true"
                 @mouseleave="onHover = false"
@@ -42,6 +42,15 @@
       </v-row>
       <nuxt />
     </v-container>
+    <v-footer class="justify-center background" height="70">
+      <div style="width: 100%; display: block">
+        <v-divider />
+      </div>
+      <div class="grey--text text--lighten-1 text-center">
+        All material Copyrigh &copy; {{ new Date().getFullYear() }}
+        <b>ORION</b>
+      </div>
+    </v-footer>
   </v-app>
 </template>
 

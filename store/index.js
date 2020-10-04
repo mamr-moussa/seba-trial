@@ -31,6 +31,12 @@ export const state = () => ({
       discreption: 'Generic Automotive Marketplace',
     },
     {
+      name: 'COC',
+      url: 'coc',
+      image: '/imgs/COC-trans.png',
+      discreption: 'An Open-Source package for modern software developers',
+    },
+    {
       name: 'Alu-Pro',
       url: 'Alu-Pro',
       image: '/imgs/projects/alupro.jpg',

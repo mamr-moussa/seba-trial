@@ -5,7 +5,7 @@
         src="/imgs/orion.png"
         :height="300"
         :width="300"
-        class="animated rotateIn delay"
+        class="animate__animated animate__rotateIn delay"
       />
       <p class="mt-5 coc-brand-name">ORION</p>
       <p class="orion-tagline">Software Solutions</p>
