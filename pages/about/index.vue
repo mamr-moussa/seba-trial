@@ -34,7 +34,7 @@
         </li>
       </ul>
     </v-col>
-    <v-col cols="12">
+    <v-col cols="12" class="animate__animted animate__fade delay">
       <h1 class="orionAmber--text font-weight-bold">Our Astronuts</h1>
       <v-btn text color="orionTeal" to="/amr-moussa" large class="astronut-btn">
         <v-avatar
@@ -45,6 +45,24 @@
         </v-avatar>
         <b class="ml-2">Amr Moussa</b>
         <b class="orionAmber--text">[CEO & Founder]</b>
+      </v-btn>
+    </v-col>
+    <v-col cols="12" class="mt-7 animate__animted animate__fade delay">
+      <v-btn
+        text
+        color="orionTeal"
+        to="/Khaled-E-Saeed"
+        large
+        class="astronut-btn"
+      >
+        <v-avatar
+          class="orionAmber--text avatar-cicle animate__animted animate__rotateIn delay"
+          size="90"
+        >
+          <img src="/imgs/khaled-saeed.jpg" />
+        </v-avatar>
+        <b class="ml-2">Khaled E.Saeed</b>
+        <b class="orionAmber--text">[G.Manager]</b>
       </v-btn>
     </v-col>
   </v-row>
