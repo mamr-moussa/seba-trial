@@ -123,7 +123,7 @@ export default {
   border-radius: 50%;
   border-width: 3px;
   border-style: solid;
-  transform: rotate(10deg);
+  transform: rotate(40deg);
   max-width: 200px;
 }
 .delay {
