@@ -1,18 +1,22 @@
 <template>
-  <v-app dark>
-    <h1 v-if="error.statusCode === 404">
+  <v-row align="cener" justify="center">
+    <h1 v-if="error.statusCode === 404" class="orionAmber--text">
       {{ pageNotFound }}
     </h1>
-    <h1 v-else>
+    <h1 v-else class="error--text">
       {{ otherError }}
     </h1>
-    <NuxtLink to="/"> Home page </NuxtLink>
-  </v-app>
+    <v-col cols="12">
+      <v-btn to="/" block large color="orionTeal" text
+        ><b> Home page </b></v-btn
+      >
+    </v-col>
+  </v-row>
 </template>
 
 <script>
 export default {
-  layout: 'empty',
+  layout: 'orion',
   props: {
     error: {
       type: Object,
@@ -30,6 +34,24 @@ export default {
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
       title,
+      meta: [
+        { property: 'og:title', hid: 'og:title', content: title },
+        {
+          property: 'og:description',
+          hid: 'og:description',
+          content: 'Content Not Found',
+        },
+        {
+          property: 'og:image',
+          content: 'https://orionstelars.com/imgs/orion.png',
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          name: 'og:site_name',
+          content: 'Orion Developments',
+        },
+      ],
     }
   },
 }
@@ -37,6 +59,6 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 20px;
+  font-size: 40px;
 }
 </style>

@@ -66,18 +66,14 @@
               <v-btn icon>
                 <a
                   v-if="showPhone"
-                  href="/contacts/Khaled_E_Saeed.vcf"
+                  href="/contacts/Khaled_E_Saed.vcf"
                   class="action-list"
                 >
                   <v-icon color="blue" class="contact-list-text">
                     mdi-contacts
                   </v-icon>
                 </a>
-                <a
-                  v-else
-                  href="/contacts/Khaled_ESaeed.vcf"
-                  class="action-list"
-                >
+                <a v-else href="/contacts/Khaled_ESaed.vcf" class="action-list">
                   <v-icon color="blue" class="contact-list-text">
                     mdi-contacts
                   </v-icon>
