@@ -67,7 +67,7 @@
             </v-list-item-content>
             <v-list-item-action>
               <v-btn icon>
-                <a href="/contacts/Amr_Moussa.vcf" class="action-list">
+                <a href="/contacts/amr-moussa.vcf" class="action-list">
                   <v-icon color="blue" class="contact-list-text">
                     mdi-contacts
                   </v-icon>
