@@ -4,6 +4,7 @@
       app
       :color="navColor"
       height="100"
+      class="cairo-font"
       :style="[
         { boxShadow: navColor === 'transparent' ? '0 0 0 0' : '0 0 10px #000' },
       ]"
@@ -875,7 +876,7 @@ export default {
           {
             type: 'video/mp4',
             // mp4
-            src: '/videos/intro-720.mp4',
+            src: '/videos/intro-530.mp4',
             // webm
             // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
           },
