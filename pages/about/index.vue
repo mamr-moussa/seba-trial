@@ -1,8 +1,10 @@
 <template>
   <v-row>
     <v-col cols="12">
-      <h1 class="orionAmber--text font-weight-bold">Who Are We?</h1>
-      <ul class="orion-list">
+      <h1 class="orionAmber--text font-weight-bold about-header">
+        Who Are We?
+      </h1>
+      <ul class="orion-list about-content">
         <li>
           Orion is a software solutions incorporation running from 2015 all the
           way up till this moment.
@@ -18,8 +20,10 @@
       </ul>
     </v-col>
     <v-col cols="12">
-      <h1 class="orionAmber--text font-weight-bold">Our Concepts</h1>
-      <ul class="orion-list">
+      <h1 class="orionAmber--text font-weight-bold about-header">
+        Our Concepts
+      </h1>
+      <ul class="orion-list about-content">
         <li>
           We believe that good solutions supply your demands, but great
           solutions evolve your industry.
@@ -101,7 +105,7 @@ export default {
 <style scope>
 .orion-list {
   font-weight: bold;
-  font-size: 120%;
+  font-size: 170%;
 }
 .avatar-cicle {
   border-width: 2px;
@@ -115,5 +119,8 @@ export default {
 }
 .delay {
   animation-delay: 1s;
+}
+.about-header {
+  font-size: 240%;
 }
 </style>

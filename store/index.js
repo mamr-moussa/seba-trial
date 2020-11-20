@@ -13,10 +13,28 @@ export const state = () => ({
       discreption: 'Paperless Content Management System',
     },
     {
-      name: 'The Greet Hall',
-      url: 'Great-Hall',
-      image: '/imgs/projects/greet-hall.png',
+      name: 'The Great Hall',
+      url: 'the-great-hall',
+      image: '/imgs/projects/the-great-hall.png',
       discreption: 'The next generation of Boards Channels',
+      pdf: {
+        src: '/docs/orion-the-great-hall.pdf',
+      },
+    },
+    {
+      name: 'Seba',
+      url: 'seba',
+      image: '/imgs/projects/seba.png',
+      discreption: 'Educational Platform',
+    },
+    {
+      name: 'Barcoda',
+      url: 'barcoda',
+      image: '/imgs/projects/barcoda.png',
+      discreption: 'The Ultimate Stock Manager',
+      pdf: {
+        src: '/docs/orion-barcoda.pdf',
+      },
     },
     {
       name: 'Tuatara',

@@ -65,9 +65,10 @@ export default {
   font-weight: bold;
   text-decoration: none;
   color: #fff !important;
+  font-size: 140%;
 }
 .project-subtitle {
   font-weight: bold;
-  font-size: 110%;
+  font-size: 120%;
 }
 </style>

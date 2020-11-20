@@ -1,17 +1,27 @@
 <template>
-  <v-app>
+  <v-app class="cairo-font">
     <v-app-bar
       app
       :color="navColor"
       height="100"
+      style="direction: ltr"
       class="cairo-font"
       :style="[
         { boxShadow: navColor === 'transparent' ? '0 0 0 0' : '0 0 10px #000' },
       ]"
     >
-      <v-toolbar-title class="font-weight-black headline">
-        SEBA
+      <v-toolbar-title class="font-weight-black dis-3">
+        <v-avatar>
+          <img src="/imgs/projects/seba.png" />
+        </v-avatar>
+        <span style="vertical-align: middle">SEBA</span>
       </v-toolbar-title>
+      <v-spacer />
+      <v-btn to="/" icon x-large color="orionAmber">
+        <v-avatar>
+          <img src="/orion.ico" class="animate__animated animate__rotateIn" />
+        </v-avatar>
+      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -27,6 +37,7 @@
             <source src="/videos/intro.mp4?autoplay=1" />
           </video> -->
           <div
+            v-if="playerOptions"
             ref="vid"
             v-video-player:myVideoPlayer="playerOptions"
             class="video-player-box vjs-fill vjs-custom-skin"
@@ -60,13 +71,15 @@
           </v-responsive>
 
           <v-responsive
-            class="mx-auto title font-weight-light mb-8"
+            class="mx-auto title font-weight-light mb-8 cairo-font"
             max-width="720"
           >
-            <br />
-            سيبا رمز هيلوغريفي يعني "نجمة"، و قد اعتاد اجدادنا تلقيب المعلمين
-            بلقب "سيباو" و هو يعني النجمة المرشدة، تشبيهاً للمعلمين بالنجوم التي
-            ترشدهم في دروب حياتهم.
+            <p class="cairo-font">
+              <br />
+              سيبا رمز هيلوغريفي يعني "نجمة"، و قد اعتاد اجدادنا تلقيب المعلمين
+              بلقب "سيباو" و هو يعني النجمة المرشدة، تشبيهاً للمعلمين بالنجوم
+              التي ترشدهم في دروب حياتهم.
+            </p>
           </v-responsive>
         </v-container>
 
@@ -82,34 +95,36 @@
           </v-responsive>
 
           <v-responsive
-            class="mx-auto title font-weight-light mb-8"
+            class="mx-auto title font-weight-light mb-8 cairo-font"
             max-width="720"
           >
-            <br />
-            تعتزم رؤية مصر 2030 أنه بحلول هذا العام إتاحة التعليم والتدريب
-            للجميع بجودة عالية دون التمييز، وفي إطار نظام مؤسسي، وكفء وعادل،
-            ومستدام، ومرن، وأن يكون مرتكزًا على المتعلم والمتدرب القادر على
-            التفكير والمتمكن فنياً وتقنياً وتكنولوجياً، وأن يساهم أيضاً في بناء
-            الشخصية المتكاملة وإطلاق إمكانياتها إلى أقصى مدى لمواطن معتز بذاته،
-            ومستنير، ومبدع، ومسئول، وقابل للتعددية، يحترم الاختلاف، وفخور بتاريخ
-            بلاده، وشغوف ببناء مستقبلها وقادر على التعامل تنافسياً مع الكيانات
-            الإقليمية والعالمية.
-            <br /><br />
-            وفي ضوء ذلك جاءت فكرت عمل منصة الكترونية تضم جميع مراحل التعليم قبل
-            الجامعي (ابتدائي – اعدادي – ثانوي) بنوعيه الخاص والحكومة مع مراعاة
-            جميع طبقات المجتمع دون تفرقة تتيح للطالب التعلم عن بعد او من منازلهم
-            وفق مناهج التعليم المصرية مع إمكانية تقييمهم ومعرفة نقاط القوة
-            والضعف لديهم للعمل عليها من اجل مستقبل افضل لهم مما ينعكس علي
-            انتاجيتهم في النهوض بالدولة
-            <br /><br />
-            الحد من جشع المدرسين الخصوصيين والمراكز التعليمية لإتاحة التعليم
-            لكافة الطبقات بغض النظر عن مستواهم المادي تفعيل وتدعيم دور الاسرة في
-            بناء وتقييم الطالب
+            <p class="cairo-font">
+              <br />
+              تعتزم رؤية مصر 2030 أنه بحلول هذا العام إتاحة التعليم والتدريب
+              للجميع بجودة عالية دون التمييز، وفي إطار نظام مؤسسي، وكفء وعادل،
+              ومستدام، ومرن، وأن يكون مرتكزًا على المتعلم والمتدرب القادر على
+              التفكير والمتمكن فنياً وتقنياً وتكنولوجياً، وأن يساهم أيضاً في
+              بناء الشخصية المتكاملة وإطلاق إمكانياتها إلى أقصى مدى لمواطن معتز
+              بذاته، ومستنير، ومبدع، ومسئول، وقابل للتعددية، يحترم الاختلاف،
+              وفخور بتاريخ بلاده، وشغوف ببناء مستقبلها وقادر على التعامل
+              تنافسياً مع الكيانات الإقليمية والعالمية.
+              <br /><br />
+              وفي ضوء ذلك جاءت فكرت عمل منصة الكترونية تضم جميع مراحل التعليم
+              قبل الجامعي (ابتدائي – اعدادي – ثانوي) بنوعيه الخاص والحكومة مع
+              مراعاة جميع طبقات المجتمع دون تفرقة تتيح للطالب التعلم عن بعد او
+              من منازلهم وفق مناهج التعليم المصرية مع إمكانية تقييمهم ومعرفة
+              نقاط القوة والضعف لديهم للعمل عليها من اجل مستقبل افضل لهم مما
+              ينعكس علي انتاجيتهم في النهوض بالدولة
+              <br /><br />
+              الحد من جشع المدرسين الخصوصيين والمراكز التعليمية لإتاحة التعليم
+              لكافة الطبقات بغض النظر عن مستواهم المادي تفعيل وتدعيم دور الاسرة
+              في بناء وتقييم الطالب
+            </p>
           </v-responsive>
         </v-container>
 
         <v-container class="text-center">
-          <h2 class="dis-2 font-weight-bold mb-3">الأهداف العامة</h2>
+          <h2 class="dis-2 font-weight-bold mb-3 cairo-font">الأهداف العامة</h2>
 
           <v-responsive class="mx-auto mb-8" width="56">
             <v-divider class="mb-1"></v-divider>
@@ -118,7 +133,7 @@
           </v-responsive>
 
           <v-responsive
-            class="mx-auto title font-weight-light mb-8"
+            class="mx-auto title font-weight-light mb-8 cairo-font"
             max-width="720"
           >
             التحول الرقمي والشق التربوي في نظام التعليم المصري وربطه بنظام
@@ -148,7 +163,7 @@
           >
             <v-container fill-height>
               <v-row class="mx-auto" align="center" justify="center">
-                <h1 class="dis-2 font-weight-bold text-center">
+                <h1 class="dis-2 font-weight-bold text-center cairo-font">
                   المزايا و المنافع
                 </h1>
               </v-row>
@@ -183,11 +198,11 @@
                 ></v-card-title>
 
                 <v-card-text style="font-size: 110%">
-                  <ul class="text-right">
+                  <ul class="text-right cairo-font">
                     <li
                       v-for="(point, p) in text"
                       :key="p"
-                      class="mb-3"
+                      class="mb-3 cairo-font"
                       v-text="point"
                     />
                   </ul>
@@ -207,7 +222,7 @@
         >
           <v-container fill-height>
             <v-row class="mx-auto" align="center" justify="center">
-              <h1 class="dis-2 font-weight-bold text-center">
+              <h1 class="dis-2 font-weight-bold text-center cairo-font">
                 اليات الاستخدام
               </h1>
             </v-row>
@@ -216,14 +231,17 @@
       </section>
       <section>
         <v-container>
-          <v-row align="center">
+          <v-row align="center" justify="center">
             <v-col cols="12" md="3" class="hidden-md-and-down">
-              <v-img src="/imgs/teacher.png" max-height="50vh" contain />
+              <!-- <v-img src="/imgs/teacher.png" max-height="50vh" contain /> -->
+              <v-avatar color="blue" size="200">
+                <v-icon size="150" dark>mdi-account-tie</v-icon>
+              </v-avatar>
             </v-col>
             <v-col cols="12" md="9">
-              <h1 class="text-right">كيفية العمل ( المدرس )</h1>
+              <h1 class="text-right cairo-font">كيفية العمل ( المدرس )</h1>
               <br />
-              <p class="text-right">
+              <p class="text-right cairo-font">
                 استخدام المعلم يقوم بمليء استمارة بيانات الدخول لا يوجد شروط
                 لانضمام أي معلم لتجميع اكبر عدد من المعلمين ولكن يوجد شروط
                 واحكام اثناء العملية التعليمية وتقييم مستمر له من الممكن ان يؤدي
@@ -246,11 +264,11 @@
           </v-row>
         </v-container>
         <v-container>
-          <v-row align="center">
+          <v-row align="center" justify="center">
             <v-col cols="12" md="9">
-              <h1 class="text-right">كيفية العمل ( للطالب)</h1>
+              <h1 class="text-right cairo-font">كيفية العمل ( للطالب)</h1>
               <br />
-              <p class="text-right">
+              <p class="text-right cairo-font">
                 يقوم الطالب بالتسجيل في المنصة وتحديد السنة الدراسية والمواد
                 المراد دراستها
                 <br /><br />
@@ -272,19 +290,23 @@
               </p>
             </v-col>
             <v-col cols="12" md="3" class="hidden-md-and-down">
-              <v-img src="/imgs/student.png" max-height="50vh" contain />
+              <v-avatar color="pink" size="200">
+                <v-icon size="150" dark>mdi-human-child</v-icon>
+              </v-avatar>
             </v-col>
           </v-row>
         </v-container>
         <v-container>
-          <v-row align="center">
+          <v-row align="center" justify="center">
             <v-col cols="12" md="3" class="hidden-md-and-down">
-              <v-img src="/imgs/mom.png" max-height="50vh" contain />
+              <v-avatar color="green" size="200">
+                <v-icon size="150" dark>mdi-account-child</v-icon>
+              </v-avatar>
             </v-col>
             <v-col cols="12" md="9">
-              <h1 class="text-right">المتابعة والأشراف (الأسرة)</h1>
+              <h1 class="text-right cairo-font">المتابعة والأشراف (الأسرة)</h1>
               <br />
-              <p class="text-right">
+              <p class="text-right cairo-font">
                 توفر المنصة اليه لأولياء الأمور لمتابعه مستوي ابنائهم وتقدمهم في
                 العملية التعليمية
                 <br /><br />
@@ -304,7 +326,7 @@
           >
             <v-container fill-height>
               <v-row class="mx-auto" align="center" justify="center">
-                <h1 class="dis-2 font-weight-bold text-center">
+                <h1 class="dis-2 font-weight-bold text-center cairo-font">
                   قوة الذكاء الاصطناعي
                 </h1>
               </v-row>
@@ -312,11 +334,11 @@
           </v-parallax>
           <v-row align="center" class="text-center" justify="center">
             <v-col cols="12" md="8">
-              <h3 class="dis-3 font-weight-bold text-right mb-5">
+              <h3 class="dis-3 font-weight-bold text-right mb-5 cairo-font">
                 تكنولوجيا المعلومات والذكاء الاصطناعي وأثرهم علي المنظومة
                 التعليمية
               </h3>
-              <p style="font-size: 120%" class="text-right">
+              <p style="font-size: 120%" class="text-right cairo-font">
                 تحليل أداء الطلاب وتقييمهم دراسيا واجتماعيا ومعرفة ميولهم مما
                 يعطي تنبؤات بالمجالات التي يرغب بها الطلاب
                 <br /><br />
@@ -349,13 +371,15 @@
         >
           <v-container fill-height>
             <v-row class="mx-auto" align="center" justify="center">
-              <h1 class="dis-2 font-weight-bold text-center">منصات العمل</h1>
+              <h1 class="dis-2 font-weight-bold text-center cairo-font">
+                منصات العمل
+              </h1>
             </v-row>
           </v-container>
         </v-parallax>
         <div class="py-12"></div>
         <v-container>
-          <v-row justify="center">
+          <v-row justify="center" class="cairo-font">
             <v-col cols="12" md="8">
               <p style="font-size: 120%">
                 ستقوم المنصة بخدمة انواع مختلفة من المستخدمين كالطلاب و المعلمين
@@ -370,57 +394,63 @@
               </p>
             </v-col>
           </v-row>
-          <h3 class="dis-25 font-weight-bold mb-10 mt-5 text-center grey--text">
+          <h3
+            class="dis-25 font-weight-bold mb-10 mt-5 text-center grey--text cairo-font"
+          >
             المنصات حسب المستخدمين
           </h3>
           <v-row>
             <v-col cols="12" md="3" class="text-center">
-              <h3 class="dis-3 font-weight-bold mb-5">
+              <h3 class="dis-3 font-weight-bold mb-5 cairo-font">
                 الطلبة و اولياء الأمور
               </h3>
               <v-icon style="font-size: 6rem">mdi-apple</v-icon>
-              <p>تطبيق IOS</p>
+              <p class="cairo-font">تطبيق IOS</p>
               <v-icon style="font-size: 6rem" class="green--text">
                 mdi-android
               </v-icon>
-              <p>تطبيق Andriod</p>
+              <p class="cairo-font">تطبيق Andriod</p>
               <v-icon style="font-size: 6rem" class="blue--text">
                 mdi-web
               </v-icon>
-              <p>تطبيق Web</p>
+              <p class="cairo-font">تطبيق Web</p>
             </v-col>
             <v-col cols="12" md="3" class="text-center">
-              <h3 class="dis-3 font-weight-bold mb-5">المعلمين</h3>
+              <h3 class="dis-3 font-weight-bold mb-5 cairo-font">المعلمين</h3>
               <v-icon style="font-size: 6rem">mdi-apple</v-icon>
-              <p>تطبيق IOS</p>
+              <p class="cairo-font">تطبيق IOS</p>
               <v-icon style="font-size: 6rem" class="green--text">
                 mdi-android
               </v-icon>
-              <p>تطبيق Andriod</p>
+              <p class="cairo-font">تطبيق Andriod</p>
               <v-icon style="font-size: 6rem" class="blue--text">
                 mdi-web
               </v-icon>
-              <p>تطبيق Web</p>
+              <p class="cairo-font">تطبيق Web</p>
             </v-col>
             <v-col cols="12" md="3" class="text-center">
-              <h3 class="dis-3 font-weight-bold mb-5">موظفين التشغيل</h3>
+              <h3 class="dis-3 font-weight-bold mb-5 cairo-font">
+                موظفين التشغيل
+              </h3>
               <v-icon style="font-size: 6rem" class="blue--text">
                 mdi-web
               </v-icon>
-              <p>تطبيق Web</p>
+              <p class="cairo-font">تطبيق Web</p>
             </v-col>
             <v-col cols="12" md="3" class="text-center">
-              <h3 class="dis-3 font-weight-bold mb-5">الجهات الإدارية</h3>
+              <h3 class="dis-3 font-weight-bold mb-5 cairo-font">
+                الجهات الإدارية
+              </h3>
               <v-icon style="font-size: 6rem">mdi-apple</v-icon>
-              <p>تطبيق IOS</p>
+              <p class="cairo-font">تطبيق IOS</p>
               <v-icon style="font-size: 6rem" class="green--text">
                 mdi-android
               </v-icon>
-              <p>تطبيق Andriod</p>
+              <p class="cairo-font">تطبيق Andriod</p>
               <v-icon style="font-size: 6rem" class="blue--text">
                 mdi-web
               </v-icon>
-              <p>تطبيق Web</p>
+              <p class="cairo-font">تطبيق Web</p>
             </v-col>
           </v-row>
         </v-container>
@@ -433,7 +463,7 @@
         >
           <v-container fill-height>
             <v-row class="mx-auto" align="center" justify="center">
-              <h1 class="dis-2 font-weight-bold text-center">
+              <h1 class="dis-2 font-weight-bold text-center cairo-font">
                 اساسيات التصميم
               </h1>
             </v-row>
@@ -443,11 +473,11 @@
         <v-container>
           <v-row align="center" class="text-center" justify="center">
             <v-col cols="12" md="8">
-              <h3 class="dis-3 font-weight-bold text-right mb-5">
+              <h3 class="dis-3 font-weight-bold text-right mb-5 cairo-font">
                 التحديات التقنية
               </h3>
               <br />
-              <p style="font-size: 120%" class="text-right">
+              <p style="font-size: 120%" class="text-right cairo-font">
                 من المقرر ان تخدم المنصة ملايين من الطلبة، و ملايين من اولياء
                 الأمور، و الاف من المعلمين.
                 <br /><br />
@@ -458,13 +488,15 @@
                 هناك العديد من النشاطات الجديدة تظهر على الساحة، لذلك فإنشاء
                 منصة قادرة على مواكبة تلك النشاطات ليس برفاهية.
               </p>
-              <h3 class="dis-3 font-weight-bold text-right mb-5 mt-10">
+              <h3
+                class="dis-3 font-weight-bold text-right mb-5 mt-10 cairo-font"
+              >
                 المفاتيح الرئيسية في التصميم
               </h3>
-              <ul class="text-right mr-5" style="font-size: 120%">
-                <li>سرعة الأداء</li>
-                <li>قابلية التوسع</li>
-                <li>المرونة</li>
+              <ul class="cairo-font text-right mr-5" style="font-size: 120%">
+                <li class="cairo-font">سرعة الأداء</li>
+                <li class="cairo-font">قابلية التوسع</li>
+                <li class="cairo-font">المرونة</li>
               </ul>
               <br />
             </v-col>
@@ -478,7 +510,7 @@
         >
           <v-container fill-height>
             <v-row class="mx-auto" align="center" justify="center">
-              <h1 class="dis-2 font-weight-bold text-center">
+              <h1 class="dis-2 font-weight-bold text-center cairo-font">
                 التكنولوجيا المستخدمة
               </h1>
             </v-row>
@@ -497,7 +529,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/mongodb.png" />
-              <p class="hidden-md-and-up text-center">Mongo</p>
+              <p class="hidden-md-and-up text-center cairo-font">Mongo</p>
             </v-col>
             <v-col
               cols="6"
@@ -508,7 +540,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/cassandra.png" />
-              <p class="hidden-md-and-up text-center">Cassandra</p>
+              <p class="hidden-md-and-up text-center cairo-font">Cassandra</p>
             </v-col>
             <v-col
               cols="6"
@@ -519,21 +551,21 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/mysql.png" />
-              <p class="hidden-md-and-up text-center">MySQL</p>
+              <p class="hidden-md-and-up text-center cairo-font">MySQL</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
             <v-col cols="12" :md="1">
-              <p class="text-center">Mongo Database</p>
+              <p class="text-center cairo-font">Mongo Database</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">Cassandra Database</p>
+              <p class="text-center cairo-font">Cassandra Database</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">MySQL Database</p>
+              <p class="text-center cairo-font">MySQL Database</p>
             </v-col>
           </v-row>
-          <p>
+          <p class="cairo-font">
             ستقوم المنصة بتخزين كم هائل من البيانات و التي بطبيعة عمل المنصة سوف
             تأخذ انماط متعددة.
             <br /><br />
@@ -562,7 +594,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/node.png" />
-              <p class="hidden-md-and-up text-center">NodeJS</p>
+              <p class="hidden-md-and-up text-center cairo-font">NodeJS</p>
             </v-col>
             <v-col
               cols="6"
@@ -573,7 +605,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/go.png" />
-              <p class="hidden-md-and-up text-center">GoLang</p>
+              <p class="hidden-md-and-up text-center cairo-font">GoLang</p>
             </v-col>
             <v-col
               cols="6"
@@ -584,7 +616,9 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/cpp.png" />
-              <p class="hidden-md-and-up text-center" dir="ltr">C++</p>
+              <p class="hidden-md-and-up text-center cairo-font" dir="ltr">
+                C++
+              </p>
             </v-col>
             <v-col
               cols="6"
@@ -595,7 +629,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/elixir.png" />
-              <p class="hidden-md-and-up text-center">Elixir</p>
+              <p class="hidden-md-and-up text-center cairo-font">Elixir</p>
             </v-col>
             <v-col
               cols="6"
@@ -606,7 +640,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/python.png" />
-              <p class="hidden-md-and-up text-center">Python</p>
+              <p class="hidden-md-and-up text-center cairo-font">Python</p>
             </v-col>
             <v-col
               cols="6"
@@ -617,30 +651,30 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/php.png" />
-              <p class="hidden-md-and-up text-center">PHP</p>
+              <p class="hidden-md-and-up text-center cairo-font">PHP</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
             <v-col cols="12" :md="1">
-              <p class="text-center">NodeJS</p>
+              <p class="text-center cairo-font">NodeJS</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">GoLang</p>
+              <p class="text-center cairo-font">GoLang</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center" dir="ltr">C++</p>
+              <p class="text-center cairo-font" dir="ltr">C++</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">Elixir</p>
+              <p class="text-center cairo-font">Elixir</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">Python</p>
+              <p class="text-center cairo-font">Python</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">PHP</p>
+              <p class="text-center cairo-font">PHP</p>
             </v-col>
           </v-row>
-          <p>
+          <p class="cairo-font">
             ستقوم خوادم المنصة بتوفير العديد من الخدمات المختلفة و تقديمها
             لملايين المستخدمين.
             <br /><br />
@@ -693,7 +727,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/vue.png" />
-              <p class="hidden-md-and-up text-center">VUE PWA</p>
+              <p class="hidden-md-and-up text-center cairo-font">VUE PWA</p>
             </v-col>
             <v-col
               cols="6"
@@ -704,7 +738,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/nuxt.png" />
-              <p class="hidden-md-and-up text-center">Nuxt SSR</p>
+              <p class="hidden-md-and-up text-center cairo-font">Nuxt SSR</p>
             </v-col>
             <v-col
               cols="6"
@@ -715,7 +749,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/swift.png" />
-              <p class="hidden-md-and-up text-center">Swift</p>
+              <p class="hidden-md-and-up text-center cairo-font">Swift</p>
             </v-col>
             <v-col
               cols="6"
@@ -726,7 +760,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/kotlin.png" />
-              <p class="hidden-md-and-up text-center">Kotlin</p>
+              <p class="hidden-md-and-up text-center cairo-font">Kotlin</p>
             </v-col>
             <v-col
               cols="6"
@@ -737,7 +771,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/flutter.png" />
-              <p class="hidden-md-and-up text-center">Flutter</p>
+              <p class="hidden-md-and-up text-center cairo-font">Flutter</p>
             </v-col>
             <v-col
               cols="6"
@@ -748,30 +782,30 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/webrtc.png" />
-              <p class="hidden-md-and-up text-center">WebRTC</p>
+              <p class="hidden-md-and-up text-center cairo-font">WebRTC</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
             <v-col cols="12" :md="1">
-              <p class="text-center">VUE PWA</p>
+              <p class="text-center cairo-font">VUE PWA</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">NUXT SSR</p>
+              <p class="text-center cairo-font">NUXT SSR</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center" dir="ltr">Swift</p>
+              <p class="text-center cairo-font" dir="ltr">Swift</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">Kotlin</p>
+              <p class="text-center cairo-font">Kotlin</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">Flutter</p>
+              <p class="text-center cairo-font">Flutter</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">WebRTC</p>
+              <p class="text-center cairo-font">WebRTC</p>
             </v-col>
           </v-row>
-          <p>
+          <p class="cairo-font">
             اما عن منصات المستخدمين فتوفر المنصة العديد منهم لكل من قطاعات
             المستخدمين.
             <br />
@@ -802,7 +836,9 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/jenkins.png" />
-              <p class="hidden-md-and-up text-center">Jenkins CI/CL</p>
+              <p class="hidden-md-and-up text-center cairo-font">
+                Jenkins CI/CL
+              </p>
             </v-col>
             <v-col
               cols="6"
@@ -813,7 +849,7 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/git.png" />
-              <p class="hidden-md-and-up text-center">Git VC</p>
+              <p class="hidden-md-and-up text-center cairo-font">Git VC</p>
             </v-col>
             <v-col
               cols="6"
@@ -824,21 +860,21 @@
               style="padding: 30px"
             >
               <v-img src="/imgs/tech/docker.png" />
-              <p class="hidden-md-and-up text-center">Docker</p>
+              <p class="hidden-md-and-up text-center cairo-font">Docker</p>
             </v-col>
           </v-row>
           <v-row justify="center" align="center" class="hidden-md-and-down">
             <v-col cols="12" :md="1">
-              <p class="text-center">Jenkins CI/CL</p>
+              <p class="text-center cairo-font">Jenkins CI/CL</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">Git VC</p>
+              <p class="text-center cairo-font">Git VC</p>
             </v-col>
             <v-col cols="12" :md="1" offset-md="1">
-              <p class="text-center">Docker</p>
+              <p class="text-center cairo-font">Docker</p>
             </v-col>
           </v-row>
-          <p>
+          <p class="cairo-font">
             الية العمل و ميكنة عملية النشر تسهل من مهام المطورين و ترفع من كفائة
             و اداء المنصه، حيث انها تضمن ان كل ما سيتم نشره يعمل بكفائة من خلال
             ميكنة عملية الاختبار، كما انه في حالات الطوارئ او الاخطاء الغير
@@ -853,6 +889,7 @@
         class="title font-weight-light grey--text text--lighten-1 text-center"
       >
         &copy; {{ new Date().getFullYear() }} — <b>SEBA</b> — Made with 💜 by
+        <span class="orionTeal--text">ORION</span> &
         <b style="font-family: monospace" class="pink--text">COC</b>
       </div>
     </v-footer>
@@ -866,23 +903,6 @@ export default {
   data() {
     return {
       navColor: 'transparent',
-      playerOptions: {
-        responsive: true,
-        autoplay: true,
-        muted: false,
-        language: 'en',
-        playbackRates: [0.7, 1.0, 1.5, 2.0],
-        sources: [
-          {
-            type: 'video/mp4',
-            // mp4
-            src: '/videos/intro-530.mp4',
-            // webm
-            // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
-          },
-        ],
-        poster: '/imgs/dark.jpg',
-      },
       features: [
         {
           icon: 'mdi-flag-variant',
@@ -924,6 +944,29 @@ export default {
         ['5m', 'Total Downloads'],
       ],
     }
+  },
+  computed: {
+    playerOptions() {
+      return {
+        responsive: true,
+        autoplay: true,
+        muted: false,
+        language: 'en',
+        playbackRates: [0.7, 1.0, 1.5, 2.0],
+        sources: [
+          {
+            type: 'video/mp4',
+            // mp4
+            src: this.$vuetify.breakpoint.mdAndDown
+              ? '/videos/intro-530.mp4'
+              : '/videos/intro-720.mp4',
+            // webm
+            // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+          },
+        ],
+        poster: '/imgs/dark.jpg',
+      }
+    },
   },
   mounted() {
     this.$vuetify.rtl = true
@@ -994,7 +1037,7 @@ export default {
       },
       {
         property: 'og:image',
-        content: 'https://cocdevs.com/imgs/seba.jpg',
+        content: 'https://orionstelars.com/imgs/projects/seba.jpg',
       },
       {
         property: 'og:site_name',
@@ -1007,17 +1050,6 @@ export default {
 }
 </script>
 <style lang="css">
-*,
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-  font-family: 'Cairo', sans-serif;
-}
 .cairo-font {
   font-family: 'Cairo', sans-serif !important;
 }

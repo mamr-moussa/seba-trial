@@ -26,11 +26,7 @@
             </template>
 
             <v-list class="background lighten-2">
-              <v-list-item
-                link
-                color="red"
-                href="/projectsassets/ogun/docs/OGUN.pdf"
-              >
+              <v-list-item link color="red" href="/docs/orion-ogun.pdf">
                 <v-list-item-icon>
                   <v-icon color="red">mdi-adobe-acrobat</v-icon>
                 </v-list-item-icon>
