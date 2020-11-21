@@ -961,7 +961,7 @@ export default {
     playerOptions() {
       return {
         responsive: true,
-        autoplay: true,
+        autoplay: false,
         muted: false,
         language: 'en',
         playbackRates: [0.7, 1.0, 1.5, 2.0],
