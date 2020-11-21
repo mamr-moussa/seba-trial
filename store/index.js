@@ -25,7 +25,7 @@ export const state = () => ({
       name: 'Seba',
       url: 'seba',
       image: '/imgs/projects/seba.png',
-      discreption: 'Educational Platform',
+      discreption: 'Online Educational Platform',
     },
     {
       name: 'Barcoda',
@@ -40,7 +40,7 @@ export const state = () => ({
       name: 'Tuatara',
       url: 'Tuatara',
       image: '/imgs/projects/tuatara-teal.png',
-      discreption: 'SaaS and Prem Garage Management System System',
+      discreption: 'Garage Management System',
     },
     {
       name: 'Spart',
@@ -52,7 +52,10 @@ export const state = () => ({
       name: 'COC',
       url: 'coc',
       image: '/imgs/COC-trans.png',
-      discreption: 'An Open-Source package for modern software developers',
+      discreption: 'An Open-Source package for JS developers',
+      pdf: {
+        src: '/docs/orion-coc.pdf',
+      },
     },
     {
       name: 'Alu-Pro',

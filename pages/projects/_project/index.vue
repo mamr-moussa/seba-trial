@@ -8,7 +8,7 @@
         <h1 class="project-name orionAmber--text">{{ project.name }}</h1>
         <p class="project-subtitle">{{ project.discreption }}</p>
       </v-col>
-      <v-col v-if="project.pdf" cols="12">
+      <v-col v-if="project.pdf && isMounted" cols="12">
         <v-divider />
         <v-row align="center" justify="center">
           <v-col cols="12">
@@ -17,14 +17,14 @@
               target="_blank"
               class="z-depth-0 mb-2"
               large
-              color="orionAmber"
+              color="red"
               style="float: right"
             >
-              <v-icon>mdi-download</v-icon>
+              <v-icon>mdi-adobe-acrobat</v-icon>
               <b>Download</b>
             </v-btn>
           </v-col>
-          <v-col cols="1">
+          <v-col v-if="!$vuetify.breakpoint.mdAndDown" cols="1">
             <v-btn
               :disabled="currentPage <= 1"
               fab
@@ -35,7 +35,7 @@
               <v-icon color="primary" size="40">mdi-chevron-left</v-icon>
             </v-btn>
           </v-col>
-          <v-col cols="10">
+          <v-col cols="12" lg="10">
             <pdf
               ref="pdfViewer"
               :src="project.pdf.src"
@@ -44,7 +44,7 @@
               @page-loaded="currentPage = $event"
             />
           </v-col>
-          <v-col cols="1">
+          <v-col v-if="!$vuetify.breakpoint.mdAndDown" cols="1">
             <v-btn
               fab
               dark
@@ -78,10 +78,17 @@ export default {
   components: {
     pdf,
   },
+  // asyncData({ params, store }) {
+  //   const filter = store.state.projects.filter((i) => i.url === params.project)
+  //   const pdata = filter && filter.length ? filter[0] : null
+  //   console.log('pdate', pdata)
+  //   return { ...pdata }
+  // },
   data() {
     return {
       pageCount: 0,
       currentPage: 0,
+      isMounted: false,
     }
   },
   computed: {
@@ -94,8 +101,8 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      window.rr = this.$refs.pdfPagination
-    }, 5000)
+      this.isMounted = true
+    }, 2000)
   },
   methods: {
     changePage(e) {
@@ -109,18 +116,19 @@ export default {
     },
   },
   head() {
+    const project = this.project
     return {
-      title: this.project.name,
+      title: project.name,
       meta: [
-        { property: 'og:title', hid: 'og:title', content: this.project.name },
+        { property: 'og:title', hid: 'og:title', content: project.name },
         {
           property: 'og:description',
           hid: 'og:description',
-          content: this.project.discreption,
+          content: project.discreption,
         },
         {
           property: 'og:image',
-          content: this.project.image,
+          content: project.image,
         },
         {
           hid: 'og:site_name',
@@ -134,14 +142,27 @@ export default {
 }
 </script>
 <style scoped>
-.project-name {
-  text-decoration: none;
-  font-size: 80pt;
-  font-weight: 200;
+@media only screen and (max-width: 600px) {
+  .project-name {
+    text-decoration: none;
+    font-size: 40pt;
+    font-weight: 200;
+  }
+  .project-subtitle {
+    font-weight: bold;
+    font-size: 25pt;
+  }
 }
-.project-subtitle {
-  font-weight: bold;
-  font-size: 25pt;
+@media only screen and (min-width: 601px) {
+  .project-name {
+    text-decoration: none;
+    font-size: 80pt;
+    font-weight: 200;
+  }
+  .project-subtitle {
+    font-weight: bold;
+    font-size: 25pt;
+  }
 }
 .o--pdf-viewer {
   width: 100%;

@@ -10,13 +10,25 @@
         { boxShadow: navColor === 'transparent' ? '0 0 0 0' : '0 0 10px #000' },
       ]"
     >
-      <v-toolbar-title class="font-weight-black dis-3">
+      <v-toolbar-title class="font-weight-black dis-3" @click="scrollToTop">
         <v-avatar>
           <img src="/imgs/projects/seba.png" />
         </v-avatar>
         <span style="vertical-align: middle">SEBA</span>
       </v-toolbar-title>
       <v-spacer />
+      <v-btn
+        href="/docs/orion-seba.pdf"
+        target="_blank"
+        class="z-depth-0 mr-5"
+        large
+        fab
+        text
+        color="white"
+        style="float: right"
+      >
+        <v-icon>mdi-download</v-icon>
+      </v-btn>
       <v-btn to="/" icon x-large color="orionAmber">
         <v-avatar>
           <img src="/orion.ico" class="animate__animated animate__rotateIn" />
@@ -1022,6 +1034,9 @@ export default {
     // player is ready
     playerReadied(player) {
       // console.log('example 01: the player is readied', player)
+    },
+    scrollToTop() {
+      this.$vuetify.goTo('#about-me')
     },
   },
   head: {
